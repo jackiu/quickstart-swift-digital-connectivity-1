@@ -69,7 +69,7 @@ class HostGroup(NestedStack):
         user_data = None
         if ami_id is None:
             machine_image = _ec2.MachineImage.lookup(
-                name="RHEL-8.3.0_HVM-????????-x86_64-0-Hourly2-GP2", owners=["309956199498"])
+                name="RHEL-8.6.0_HVM-????????-x86_64-0-Hourly2-GP2", owners=["309956199498"])
             user_data = _ec2.UserData.for_linux()
             for line in get_user_data(self.region, self.node.try_get_context("qs_s3_bucket")):
                 user_data.add_commands(line)
